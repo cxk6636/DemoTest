@@ -1,0 +1,8 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false"> 
+　　  <!--其他配置省略--> 
+ <!--关闭消费者日志-->
+ <logger name="org.apache.kafka.clients.consumer.ConsumerConfig" level="off" />
+
+ <!--关闭生产者日志-->
+ <logger name="org.apache.kafka.clients.producer.ProducerConfig" level="off" />
+</configuration>
