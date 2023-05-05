@@ -17,10 +17,10 @@ public class RabbitmqC {
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         //设置MabbitMQ所在服务器的ip和端口
-        factory.setHost("10.10.5.26");
-        factory.setPort(31652);
-        factory.setUsername("default_user_hQLXZzPi-AeFCShHPTV");
-        factory.setPassword("vs39c4QfHy8Wd4XIqqHmdwSVUDVqTzSo");
+        factory.setHost("10.10.5.23");
+        factory.setPort(31199);
+        factory.setUsername("default_user_d1FapJzk3RfKabLG07m");
+        factory.setPassword("kZL99oIPDRQUXJXrQ5-7-cgBwNuPoa9I");
 
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
