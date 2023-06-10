@@ -20,18 +20,28 @@ import java.util.concurrent.TimeUnit;
 public class RedisDemo {
 
     public static void main(String[] args) {
-        //连接本地的redis  10.10.35.248:32589
-        Jedis jedis = new Jedis("10.10.5.26", 30585);
+        //连接本地的redis  10.10.6.19:30231
+        Jedis jedis = new Jedis("10.10.6.19", 30231);
         //如果有密码则需要下面这一行
 //        jedis.auth("Abc123");
         //查看服务是否运行,运行正常的话返回一个PONG，否则返回一个连接错误
         //	        System.out.println(jedis.ping());
-        for(int j = 0; j < 1000; j++) {
-            String key = System.currentTimeMillis() + "_" + j + "_" + "key";
-            String value = System.currentTimeMillis() + "_" + j + "_" + "value";
-//            jedis.setex(key, 5, value);
-            jedis.set(key, value);
+//        for(int j = 0; j < 100; j++) {
+//            String key = "init_key_" + j;
+//            String value = "value_" + j;
+//            jedis.set(key, value);
+//        }
+
+
+        for(int j = 0; j < 100; j++) {
+            String key = "init_key_" + j;
+
+            String s = jedis.get(key);
+            System.out.println(s);
         }
+
+
+
 
 //        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(100, 200, 100, TimeUnit.HOURS, new LinkedBlockingQueue<>(500));
 //

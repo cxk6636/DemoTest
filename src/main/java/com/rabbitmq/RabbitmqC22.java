@@ -1,26 +1,24 @@
 package com.rabbitmq;
 
+import com.rabbitmq.client.*;
+
 import java.io.IOException;
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.DefaultConsumer;
-import com.rabbitmq.client.Envelope;
+
 /**
  * @author cxk
  * 2023/1/10 14:24
  */
 
-public class RabbitmqC {
-    private static final String QUEUE = "rabbitmq_queue_name11";
+public class RabbitmqC22 {
+    private static final String QUEUE = "rabbitmq_queue_name22";
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         //设置MabbitMQ所在服务器的ip和端口
-        factory.setHost("10.10.5.23");
-        factory.setPort(32070);
-        factory.setUsername("default_user_gpnfFdBsLUln8CsENvs");
-        factory.setPassword("8it2KuN5WjP5HUexixBiBDHazzVLYS_T");
+
+        factory.setHost("10.10.21.22");
+        factory.setPort(30684);
+        factory.setUsername("default_user_u_afFlIWrdJ0K5iJbqm");
+        factory.setPassword("du9ATPo3G65XdIqmQe5enQRxKrBiq0wQ");
 
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();

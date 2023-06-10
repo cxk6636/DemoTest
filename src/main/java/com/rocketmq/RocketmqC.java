@@ -26,7 +26,7 @@ public class RocketmqC {
             // 声明一个消费者consumer，需要传入一个组
             DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("groupb");
             // 设置集群的NameServer地址，多个地址之间以分号分隔
-            consumer.setNamesrvAddr("10.10.45.114:32716");
+            consumer.setNamesrvAddr("10.10.5.23:31227");
             // 设置consumer的消费策略
             consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
             // 集群模式消费，广播消费不会重试

@@ -1,17 +1,16 @@
 package com.rabbitmq;
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+
 /**
  * @author cxk
  * 2023/1/10 14:24
  */
 
-public class RabbitmqP {
+public class RabbitmqP22 {
     //队列名称
-    private static final String QUEUE = "rabbitmq_queue_name11";
+    private static final String QUEUE = "rabbitmq_queue_name22";
     //队列名称
     private static final String MESSAGE = "rabbitmq_message_";
 
