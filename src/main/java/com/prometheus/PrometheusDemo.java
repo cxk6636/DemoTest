@@ -1,6 +1,8 @@
 package com.prometheus;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
@@ -11,7 +13,7 @@ public class PrometheusDemo {
     public static void main(String[] args) {
         query_range();
         System.out.println("");
-        query();
+//        query();
     }
 
     /**
@@ -19,20 +21,24 @@ public class PrometheusDemo {
      * */
     public static void query_range() {
         //填写Prometheus的地址
-        String prometheusUrl = "192.168.4.110:30909";
+        String prometheusUrl = "10.10.5.23:30909";
         //拼接好Prometheus查询语句
-        String s = "kafka_server_replicamanager_isrexpands_total{pod=~'kafka0426-cluster-1-vrcgg|kafka0426-cluster-0-nw9qf|kafka0426-cluster-2-k229d',namespace='kafka0426'}";
+//        String s = "increase(redis_commands_total{cmd='slowlog', namespace='bmmtest', pod='drc-zsred-1-1'} [1h])";
         //只用修改上面的两个参数即可
 
+        String s = "increase(mysql_global_status_slow_queries{pod='bomsmysql-mysql-0'} [1h])";
+
         Map<String, String> param = Maps.newHashMap();
+
         param.put("query", s);
+
         LocalDateTime now = LocalDateTime.now();
         String endTime = String.valueOf(DateTimeUtils.localDateTimeToTimestamp(now)).substring(0, 10);
         String url = String.format("http://%s/api/v1/query_range", prometheusUrl);
         String startTime = getTimeByTimeType(now, "");
-        param.put("start", startTime);
-        param.put("end", endTime);
-        param.put("step", "5");
+        param.put("start", "1691510400");
+        param.put("end", "1691596800");
+        param.put("step", "3600");
         System.out.println(startTime+ "::::" + endTime);
 
         //生成完成时间戳  处理断开问题
